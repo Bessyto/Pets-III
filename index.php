@@ -14,6 +14,8 @@ require_once ('vendor/autoload.php');
 
 //create an instance of Base class
 $f3 = Base::instance();
+$f3->set('colors', array('pink', 'green', 'blue'));
+
 
 $f3->set('DEBUG', 3);
 
@@ -90,7 +92,7 @@ $f3->route('POST /results', function($f3)
 );
 
 // Create a new route
-$f3->route('GET /new-pet', function()
+$f3->route('GET|POST /new-pet', function($f3)
 {
     //render to results
     $view = new Template();

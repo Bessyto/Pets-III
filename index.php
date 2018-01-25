@@ -89,4 +89,15 @@ $f3->route('POST /results', function($f3)
 }
 );
 
+// Create a new route
+$f3->route('GET /new-pet', function()
+{
+    //render to results
+    $view = new Template();
+    echo $view -> render('views/new-pet.html');
+
+
+}
+);
+
 $f3->run();

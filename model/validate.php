@@ -24,3 +24,18 @@ function validString($stringValue)
     }
     return false;
 }
+
+// define an empty array called $errors
+$errors = array();
+
+// invokes the functions, and if there are errors, adds a String message to the errors array
+if (!validColor[$color]) {
+    $errors['color'] = "Please enter a valid color";
+}
+
+if (!validString[$stringValue]) {
+    $errors['string'] = "Please enter a valid string";
+}
+
+// Initialize a $success variable, true if $errors array is true, false otherwise
+$success = sizeof($errors) == 0;

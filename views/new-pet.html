@@ -33,7 +33,7 @@
             </check>
         </div>
 
-        <label class='form-control-label'>Pet Name<input class='form-control' type='text' name='petName'></label>
+        <label class='form-control-label'>Pet Name<input class='form-control' type='text' name='petName' value="{{ @name }}"></label>
 
         <!-- Pet Color -->
         <div>
@@ -47,8 +47,8 @@
                 <option>--Select--</option>
                  <repeat group=" {{@colors}}" value="{{ @colorOption}}">
                  <!--<option> {{ @colorOption }}</option>-->
-                     <option>
-                         <check if="{{@colorOption == @color}}">selected</check>
+                     <option
+                         <check if="{{@colorOption == @color}}">selected</check>>
                          {{@colorOption}}
                      </option>
                 </repeat>
@@ -61,7 +61,7 @@
                 <p>{{ @errors['type'] }}</p>
             </check>
         </div>
-        <label class='form-control-label'>Pet Type<input class='form-control' type='text' name='petType'></label> <br>
+        <label class='form-control-label'>Pet Type <input class='form-control' type='text' name='petType' value="{{ @type }}"></label> <br>
 
         <!-- Submit Button -->
             <input class='btn btn-info mt-2' type='submit' name='submit' value="Submit">

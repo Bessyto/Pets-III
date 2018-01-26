@@ -20,14 +20,14 @@ $f3->set('colors', array('pink', 'green', 'blue'));
 $f3->set('DEBUG', 3);
 
 //define page1 route
-$f3->route('GET /', function() {
-    //echo '<h1>This is default</h1>'; //testing purposes
-
-
-   $view = new View();
-   echo $view -> render('views/home.html');
-}
-);
+//$f3->route('GET /', function() {
+//    //echo '<h1>This is default</h1>'; //testing purposes
+//
+//
+//   $view = new View();
+//   echo $view -> render('views/home.html');
+//}
+//);
 
 //define a new route
 $f3->route('GET /pets/show/@type', function($f3,$params) {
@@ -91,9 +91,28 @@ $f3->route('POST /results', function($f3)
 }
 );
 
+
+
+
 // Create a new route
 $f3->route('GET|POST /new-pet', function($f3)
 {
+
+    if(isset($_POST['submit']))
+    {
+        $color = $_POST['pet-color'];
+        $name = $_POST['petName'];
+        $type = $_POST['petType'];
+
+        include ('model/validate.php');
+
+        $f3->set('color', $color);
+        $f3->set('name', $name);
+        $f3->set('color', $type);
+
+    }
+
+
     //render to results
     $view = new Template();
     echo $view -> render('views/new-pet.html');

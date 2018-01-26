@@ -108,7 +108,9 @@ $f3->route('GET|POST /new-pet', function($f3)
 
         $f3->set('color', $color);
         $f3->set('name', $name);
-        $f3->set('color', $type);
+        $f3->set('type', $type);
+        $f3->set('errors', $errors);
+        $f3->set('success', $success);
 
     }
 

@@ -25,10 +25,23 @@
 
     <h2>Order a Pet</h2>
     <form action="#" method="post">
+
         <!-- Pet Name -->
+        <div>
+            <check if="{{ isset(@errors['name']) }}">
+                <p>{{ @errors['name'] }}</p>
+            </check>
+        </div>
+
         <label class='form-control-label'>Pet Name<input class='form-control' type='text' name='petName'></label>
 
         <!-- Pet Color -->
+        <div>
+            <check if="{{isset (@errors['color']) }}">
+                <p>{{ @errors['color'] }}</p>
+            </check>
+        </div>
+
         <label>Pet Color
             <select class="form-control" name="pet-color" id="pet-color">
                 <option>--Select--</option>
@@ -39,6 +52,11 @@
         </label>
 
         <!-- Pet Type -->
+        <div>
+            <check if="{{ isset(@errors['type']) }}">
+                <p>{{ @errors['type'] }}</p>
+            </check>
+        </div>
         <label class='form-control-label'>Pet Type<input class='form-control' type='text' name='petType'></label> <br>
 
         <!-- Submit Button -->
